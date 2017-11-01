@@ -19,16 +19,6 @@ public class Book {
 
     private Timestamp createTime;
 
-    public Book(Long seckillId, String name, Integer number, Timestamp endTime, Timestamp startTime, Timestamp createTime) {
-
-        this.seckillId = seckillId;
-        this.name = name;
-        this.number = number;
-        this.endTime = endTime;
-        this.startTime = startTime;
-        this.createTime = createTime;
-    }
-
     public Long getSeckillId() {
         return seckillId;
     }

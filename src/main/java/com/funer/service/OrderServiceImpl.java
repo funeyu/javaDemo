@@ -17,8 +17,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao;
 
     @Override
-    public List<Order> clasify() {
+    public List<Order> clasify(int id) {
 
-        return orderDao.clasify();
+        return orderDao.clasify(id);
     }
 }

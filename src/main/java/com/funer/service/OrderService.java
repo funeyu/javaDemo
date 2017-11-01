@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface OrderService {
 
-    List<Order> clasify();
+    List<Order> clasify(int id);
 }

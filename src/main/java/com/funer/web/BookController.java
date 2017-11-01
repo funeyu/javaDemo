@@ -37,9 +37,8 @@ public class BookController {
 
     @RequestMapping(value="/one", method = RequestMethod.GET)
     @ResponseBody
-    public String order() {
-
-        List<Order> orders = orderService.clasify();
+    public String order(int id) {
+        List<Order> orders = orderService.clasify(id);
         return JSON.toJSONString(orders);
     }
 

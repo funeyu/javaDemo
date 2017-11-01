@@ -4,10 +4,10 @@
 <mapper namespace="com.funer.dao.OrderDao">
     <resultMap type="com.funer.entity.Order" id="order">
         <id property="id" column="id" />
-
         <result property="buyer" column="buyer" />
         <result property="remark" column="remark" />
-        <association property="book" javaType="com.funer.entity.Book">
+        <result property="seckillId" column="seckill_id" />
+        <association property="book" column="seckill_id" javaType="com.funer.entity.Book">
             <id property="seckillId" column="seckill_id" />
             <result property="name" column="name" />
             <result property="number" column="number" />
@@ -16,4 +16,8 @@
             <result property="createTime" column="create_time" />
         </association>
     </resultMap>
+
+    <select id="clasify" parameterType="int" resultMap="order">
+        select o.id, o.buyer, o.remark, o.seckill_id, s.* from orders o, seckill s where o.seckill_id = s.seckill_id and o.id = #{id}
+    </select>
 </mapper>

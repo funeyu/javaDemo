@@ -5,22 +5,18 @@ package com.funer.entity;
  */
 public class Order {
 
-    private int id;
+    private Integer id;
 
     private String buyer;
 
     private String remark;
 
+    private Long seckillId;
+
     private Book book;
 
 
-    public Order(int id, String buyer, String remark) {
-        this.id = id;
-        this.buyer = buyer;
-        this.remark = remark;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -32,7 +28,12 @@ public class Order {
         return remark;
     }
 
-    public void setId(int id) {
+    public Long getSeckillId() { return seckillId; }
+
+
+    public Book getBook() { return book; }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,5 +44,9 @@ public class Order {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    public void setSeckillId(Long seckillId) { this.seckillId = seckillId; }
+
+    public void setBook(Book book) { this.book = book; }
 
 }
